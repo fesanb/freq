@@ -34,6 +34,7 @@ for x in f:
 	for d in range(30):
 		sleep(1)
 		v[d] = infreq
+		infreq = 0
 
 #	print(v)
 #	print(xi)
