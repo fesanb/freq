@@ -53,6 +53,7 @@ for x in f:
 	for i in range(30):
 		i2 = i + 1
 		print(x, v[i], i2)
+		print(writeDB)
 		db_insert(x, v[i], i2)
 		input("pause")
 	print("\x1b[1;32m 30 readings stored in database column {} \x1b[0m".format(x))
