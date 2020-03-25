@@ -37,8 +37,6 @@ print("      Raspberry Pi - Frequency test")
 print("        Written by Stefan Bahrawy")
 print("")
 print("This test will read frequencies and store them in a database.")
-print("It will prompt for changes.")
-print("")
 print("Each test will work for 30 sec, then prompt for new frequency. So be patient.")
 print("")
 input("Hit enter to set you first frequency and start the reading.")
@@ -55,7 +53,7 @@ for x in f:
 	for i in range(30):
 		i2 = i + 1
 		print(x, v[i], i2)
-		print(writeDB)
+		# print(writeDB)
 		v2 = v[i]
 		db_insert(x, v2, i2)
 		input("pause")
