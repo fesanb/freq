@@ -34,9 +34,11 @@ for x in f:
 	for d in range(30):
 		sleep(0.1)
 		v[d] = freq
+	
+	print(v)
 
 	for i in range(30):
 		# db_insert(f[x], v[i], i)
-		print(f[x], v[i], x)
+		print(f[x])
 
 	input("Change frequency")
