@@ -8,7 +8,7 @@ infreq = 0
 
 def freq(x):
 	global infreq
-	infreq = + 1
+	infreq += 1
 
 
 def db_insert(f, v, dbid):

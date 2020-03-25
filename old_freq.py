@@ -10,7 +10,7 @@ infreq = 0
 
 def freq(channel):
     global infreq
-    infreq = + 1
+    infreq += 1
 
 
 g.add_event_detect(16, g.RISING, callback=freq)
