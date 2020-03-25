@@ -28,7 +28,7 @@ x = 0
 
 f = ["5hz", "10hz", "11hz", "20hz", "53hz", "100hz", "190hz", "253hz", "350hz", "500hz", "600hz", "700hz", "800hz", "900hz", "1000hz", "1500hz", "3000hz", "6000hz", "9000hz", "12000hz", "15000hz", "18000hz", "21000hz"]
 
-writeDB = "UPDATE freq SET {} = {} WHERE id = {}".format(x+1, v, dbid)
+writeDB = "UPDATE freq SET {} = {} WHERE id = {}".format(f[x], v, dbid)
 
 print("      Raspberry Pi - Frequency test")
 print("        Written by Stefan Bahrawy")
