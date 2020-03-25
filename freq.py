@@ -52,11 +52,8 @@ for x in f:
 	print("Reading done, now DB insert")
 	for i in range(30):
 		i2 = i + 1
-		print(x, v[i], i2)
-		# print(writeDB)
-		v2 = v[i]
-		db_insert(x, v2, i2)
-		input("pause")
+		print(x, "Reads: ", v[i])
+		db_insert(x, v[i], i2)
 	print("\x1b[1;32m 30 readings stored in database column {} \x1b[0m".format(x))
 	print("")
 
