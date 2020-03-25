@@ -33,7 +33,7 @@ for x in f:
 
 	for d in range(30):
 		sleep(0.1)
-		v[d] = freq
+		v[d] = input
 	
 	print(v)
 
