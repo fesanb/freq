@@ -11,7 +11,8 @@ def freq(x):
 	infreq += 1
 
 
-def db_insert(f, v, dbid):
+def db_insert(x, v, i2):
+	writeDB = "UPDATE freq SET {} = {} WHERE id = {}".format(x, v, i2)
 	cnx = mysql.connector.connect(user='pi', database='freq', password='feiten')
 	cursor = cnx.cursor()
 	cursor.execute(writeDB)
@@ -23,14 +24,14 @@ g.setmode(g.BCM)
 g.setup(16, g.IN, pull_up_down=g.PUD_DOWN)
 g.add_event_detect(16, g.RISING, callback=freq)
 
-dbid = 0
 v = [0] * 30
-x = 0
-i2 = 0
+# x = 0
+# i2 = 0
+# dbid = 0
 
 f = ["5hz", "10hz", "11hz", "20hz", "53hz", "100hz", "190hz", "253hz", "350hz", "500hz", "600hz", "700hz", "800hz", "900hz", "1000hz", "1500hz", "3000hz", "6000hz", "9000hz", "12000hz", "15000hz", "18000hz", "21000hz"]
 
-writeDB = "UPDATE freq SET {} = {} WHERE id = {}".format(x, v, i2)
+
 
 print("      Raspberry Pi - Frequency test")
 print("        Written by Stefan Bahrawy")
