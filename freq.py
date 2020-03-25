@@ -51,10 +51,10 @@ for x in f:
 		infreq = 0
 	print("Reading done, now DB insert")
 	for i in range(30):
-		db_insert(x, v[i], i+1)
-		input("pause")
+		i2 = i + 1
 		print(x, v[i], i)
-		# input("pause")
+		db_insert(x, v[i], i2)
+		input("pause")
 	print("\x1b[1;32m 30 readings stored in database column {} \x1b[0m".format(x))
 	print("")
 
