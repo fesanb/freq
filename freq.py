@@ -24,11 +24,11 @@ g.add_event_detect(16, g.RISING, callback=freq)
 
 dbid = 0
 v = [0] * 30
+x = 0
 
 f = ["5hz", "10hz", "11hz", "20hz", "53hz", "100hz", "190hz", "253hz", "350hz", "500hz", "600hz", "700hz", "800hz", "900hz", "1000hz", "1500hz", "3000hz", "6000hz", "9000hz", "12000hz", "15000hz", "18000hz", "21000hz"]
 
-writeDB = "UPDATE freq({}) VALUES({}) WHERE id={}".format(f, v, dbid)
-xi = 0
+writeDB = "UPDATE freq SET {} = {} WHERE id = {}".format(x+1, v, dbid)
 
 print("      Raspberry Pi - Frequency test")
 print("        Written by Stefan Bahrawy")
@@ -42,7 +42,7 @@ input("Hit enter to set you first frequency and start the reading.")
 
 
 for x in f:
-	input("Set frequency to \x1b[1;31m {} \x1b[0m".format(x))
+	input("Set frequency to \x1b[1;31m {} \x1b[0m, and hit enter. Sit back and relax for 30sec".format(x))
 	infreq = 0
 	for d in range(30):
 		sleep(1)
@@ -50,7 +50,10 @@ for x in f:
 		infreq = 0
 
 	for i in range(30):
-		# db_insert(x, v[i], i)
-		print(x, v[i], i)
+		db_insert(x, v[i], i)
+		# print(x, v[i], i)
 	print("\x1b[1;32m 30 readings stored in database column {} \x1b[0m".format(x))
 	print("")
+
+print("")
+print("The test is complete")
