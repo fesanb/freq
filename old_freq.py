@@ -8,7 +8,7 @@ global infreq
 infreq = 0
 
 
-def freq(x):
+def freq(channel):
     global infreq
     infreq = + 1
 
