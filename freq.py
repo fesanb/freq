@@ -23,13 +23,11 @@ g.setup(16, g.IN, pull_up_down=g.PUD_DOWN)
 g.add_event_detect(16, g.RISING, callback=freq)
 
 dbid = 0
-f = []
-v = []
+v = [0] * 30
+
+f = ["5hz", "10hz", "11hz", "20hz", "53hz", "100hz", "190hz", "253hz", "350hz", "500hz", "600hz", "700hz", "800hz", "900hz", "1000hz", "1500hz", "3000hz", "6000hz", "9000hz", "12000hz", "15000hz", "18000hz", "21000hz"]
 
 writeDB = "UPDATE freq({}) VALUES({}) WHERE id={}".format(f, v, dbid)
-
-f = ["5hz", "10hz", "11hz", "20hz", "53hz", "100hz", "190hz", "253hz", "350hz", "500hz", "600hz", "700hz",
-	 "800hz", "900hz", "1000hz", "1500hz", "3000hz", "6000hz", "9000hz", "12000hz", "15000hz", "18000hz", "21000hz"]
 
 for x in f:
 
@@ -42,7 +40,3 @@ for x in f:
 		print(f[x], v[i], i)
 
 	input("Change frequency")
-
-
-
-
