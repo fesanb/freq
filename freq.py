@@ -30,16 +30,27 @@ f = ["5hz", "10hz", "11hz", "20hz", "53hz", "100hz", "190hz", "253hz", "350hz", 
 writeDB = "UPDATE freq({}) VALUES({}) WHERE id={}".format(f, v, dbid)
 xi = 0
 
+print("      Raspberry Pi - Frequency test")
+print("        Written by Stefan Bahrawy")
+print("")
+print("This test will read frequencies and store them in a database.")
+print("It will prompt for changes.")
+print("")
+print("Each test will work for 30 sec, then prompt for new frequency. So be patient.")
+print("")
+input("Hit enter to set you first frequency and start the reading.")
+
+
 for x in f:
-	input("Set frequency to {}".format(x))
+	input("Set frequency to \x1b[1;31m {} \x1b[0m".format(x))
+	infreq = 0
 	for d in range(30):
 		sleep(1)
 		v[d] = infreq
 		infreq = 0
 
 	for i in range(30):
-		# db_insert(f[x], v[i], i)
+		# db_insert(x, v[i], i)
 		print(x, v[i], i)
-
-	# x =+ 1
-	# input("Change frequency")
+	print("\x1b[1;32m 30 readings stored in database column {} \x1b[0m".format(x))
+	print("")
