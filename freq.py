@@ -31,7 +31,7 @@ writeDB = "UPDATE freq({}) VALUES({}) WHERE id={}".format(f, v, dbid)
 xi = 0
 
 for x in f:
-	input("Set frequency to {}").format(x)
+	input("Set frequency to {}".format(x))
 	for d in range(30):
 		sleep(1)
 		v[d] = infreq
